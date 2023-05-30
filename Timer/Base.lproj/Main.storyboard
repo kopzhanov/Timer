@@ -69,9 +69,9 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nRz-nq-FsP"/>
-                                    <barButtonItem title="Pause" image="pause" catalog="system" id="akT-mN-iFj">
+                                    <barButtonItem title="Play/Pause" image="playpause" catalog="system" id="akT-mN-iFj">
                                         <connections>
-                                            <action selector="pauseTimer:" destination="HZg-uP-JCh" id="wwH-EP-Lbk"/>
+                                            <action selector="playPauseTimer:" destination="HZg-uP-JCh" id="nnD-iM-GIf"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -80,13 +80,7 @@
                         <viewLayoutGuide key="safeArea" id="UrC-8U-T2A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RbK-AL-R4R">
-                        <barButtonItem key="rightBarButtonItem" title="Play" image="play" catalog="system" id="wfC-Su-OMz">
-                            <connections>
-                                <action selector="startTimer:" destination="HZg-uP-JCh" id="ssb-sv-4hQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="RbK-AL-R4R"/>
                     <connections>
                         <outlet property="label" destination="BlT-RL-Yh9" id="0EE-Ls-qKk"/>
                     </connections>
@@ -115,8 +109,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pause" catalog="system" width="88" height="128"/>
-        <image name="play" catalog="system" width="117" height="128"/>
+        <image name="playpause" catalog="system" width="128" height="79"/>
         <image name="restart" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -12,17 +12,13 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     var time = 0
-    
     var startTime = 0
-    
     var timer = Timer()
-    
     var isTimerRunning = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = timeToString(time)
-        
         startTime = time
         // Do any additional setup after loading the view.
     }
@@ -36,18 +32,18 @@ class SecondViewController: UIViewController {
         }
     }
     
-    @IBAction func startTimer(_ sender: Any) {
-        if time == 0 || isTimerRunning{
-            return
+    @IBAction func playPauseTimer(_ sender: Any) {
+        if !isTimerRunning{
+            if time == 0 || isTimerRunning{
+                return
+            }
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
+            isTimerRunning = true
+        } else {
+            timer.invalidate()
+            isTimerRunning = false
         }
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
-        isTimerRunning = true
-    }
-    
-    @IBAction func pauseTimer(_ sender: Any) {
-        timer.invalidate()
-        isTimerRunning = false
     }
     
     @IBAction func restartTimer(_ sender: Any) {
